@@ -147,6 +147,8 @@ public class CallLogPlugin implements FlutterPlugin, ActivityAware, MethodCallHa
             //CHECK IF ALL REQUESTED PERMISSIONS ARE GRANTED
             for (int grantResult : grantResults) {
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                    //Call cleanup
+                    cleanup();
                     return false;
                 }
             }
